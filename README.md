@@ -22,7 +22,9 @@
 
 ![7TlNUe.png](https://s4.ax1x.com/2022/01/24/7TlNUe.png)
 
-之后，把这个改版插件下载下来，把 xxx.ankiaddon 后缀名修改成 xxx.zip ，然后解压，打开，修改 _init_.py 里第89行的代码：
+把这个改版插件下载下来。如果你下载的是 xxx.ankiaddon ，请把它的后缀名修改成 xxx.zip ，然后解压，打开，进行下面操作。如果你下载了源码，就直接进行下面操作。
+
+修改 _init_.py 里第89行的代码：
 
 ```
 proxies = {'https': 'http://127.0.0.1:10809'}
