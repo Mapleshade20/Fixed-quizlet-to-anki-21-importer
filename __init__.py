@@ -75,7 +75,7 @@
 
 __window = None
 
-import sys, math, time, urllib.parse, json, re, os
+import sys, math, time, urllib, urllib.parse, json, re, os
 
 # Anki
 from aqt import mw
@@ -85,6 +85,8 @@ from anki.utils import checksum
 
 import requests
 import shutil
+
+proxies = {'https': 'http://127.0.0.1:10809'}
 
 requests.packages.urllib3.disable_warnings()
 
@@ -288,7 +290,7 @@ class QuizletWindow(QWidget):
                 self.downloadSet(url, parentDeck)
                 self.sleep(1.5)
             elif "/folders/" in url :
-                r = requests.get(url, verify=False, headers=headers, cookies=self.cookies)
+                r = requests.get(url, verify=False, headers=headers, cookies=self.cookies, proxies=proxies)
                 r.raise_for_status()
 
                 regex = re.escape('window.Quizlet["dashboardData"] = ')
@@ -510,7 +512,7 @@ class QuizletWindow(QWidget):
         url = url.replace('_m', '')
         file_name = "quizlet-" + url.split('/')[-1]
         # get original, non-mobile version of images
-        r = requests.get(url, stream=True, verify=False, headers=headers)
+        r = requests.get(url, stream=True, verify=False, headers=headers, proxies=proxies)
         if r.status_code == 200:
             with open(file_name, 'wb') as f:
                 r.raw.decode_content = True
@@ -536,7 +538,7 @@ class QuizletDownloader(QThread):
     def run(self):
         r = None
         try:
-            r = requests.get(self.url, verify=False, headers=headers, cookies=self.window.cookies)
+            r = requests.get(self.url, verify=False, headers=headers, cookies=self.window.cookies, proxies=proxies)
             r.raise_for_status()
 
             regex = re.escape('window.Quizlet["setPasswordData"]')
