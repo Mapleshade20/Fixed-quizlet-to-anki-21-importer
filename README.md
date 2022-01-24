@@ -22,13 +22,13 @@
 
 ![7TlNUe.png](https://s4.ax1x.com/2022/01/24/7TlNUe.png)
 
-之后，把这个改版插件下载下来，把 xxx.ankiaddon 后缀名修改成 xxx.zip ，然后解压，打开，修改 __init__.py 里第89行的代码：
+之后，把这个改版插件下载下来，把 xxx.ankiaddon 后缀名修改成 xxx.zip ，然后解压，打开，修改 _init_.py 里第89行的代码：
 
 ```
 proxies = {'https': 'http://127.0.0.1:10809'}
 ```
 
-把 10809 修改成 你自己代理的端口值，保存。然后把 __init__.py 、 config.json 、 manifest.json 三个文件打包到一个新zip里。注意不是把文件夹打包，是直接把三个文件打包！！！
+把 10809 修改成 你自己代理的端口值，保存。然后把 _init_.py 、 config.json 、 manifest.json 三个文件打包到一个新zip里。注意不是把文件夹打包，是直接把三个文件打包！！！
 
 这是官网对打包的介绍，很详细：
 
