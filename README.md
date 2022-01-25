@@ -22,7 +22,9 @@
 
 ![7TlNUe.png](https://s4.ax1x.com/2022/01/24/7TlNUe.png)
 
-把这个改版插件下载下来。如果你下载的是 xxx.ankiaddon ，请把它的后缀名修改成 xxx.zip ，然后解压，打开，进行下面操作。如果你下载了源码，就直接进行下面操作。
+https://github.com/Mapleshade20/Fixed-quizlet-to-anki-21-importer/releases/download/v2.0-pre-released/Fixed-quizlet-to-anki-21-importer.ankiaddon
+
+从上面这个链接下载插件：xxx.ankiaddon ，把它的后缀名修改成 xxx.zip ，然后解压，打开，进行下面操作。
 
 修改 _init_.py 里第89行的代码：
 
