@@ -10,22 +10,6 @@
 # Created:     04/07/2017
 #
 # Changlog:    Inital release
-#               - Rolph's plugin functionality was broken, so...
-#               - removed search tables and associated functions to KISS
-#               - reused the original API key, dunno if that's OK
-#               - replaced with just one box, for a quizlet URL
-#               - added basic error handling for dummies
-#
-#               Update 04/09/2017
-#               - modified to now take a full Quizlet url for ease of use
-#               - provide feedback if trying to download a private deck
-#               - return RFC 2616 response codes when error handling
-#               - don't make a new card type every time a new deck imported
-#               - better code documentation so people can modify it
-#
-#               Update 01/31/2018
-#               - get original quality images instead of mobile version
-#
 # Changlog (by kelciour):
 #               Update 09/12/2018
 #               - updated to Anki 2.1
@@ -119,7 +103,7 @@ rich_text_css = """
   background-color: var(--pink_light_background);
 }
 """
-
+# thank you
 # add custom model if needed
 def addCustomModel(name, col):
 
